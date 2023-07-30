@@ -2,7 +2,7 @@
 This is a guide to install as well as dual boot Arch Linux with Windows. It can also work to install only Arch. You'll just have to skip some parts that i'll mention. For more updated and informated go to [Arch Linux Wiki](https://wiki.archlinux.org/title/Installation_guide)
 
 ## Some prerequisites
-1. Disable Secure Boot. It can be enable after installation.
+1. Disable Secure Boot. It can be enabled after installation.
 2. Disable Fast Boot
 3. Disable Hibernation.
 4. If You are dual booting. Check if the EFI or the boot partition of windows is more than 100MB as it may cause problems. Refer to [Wiki](https://wiki.archlinux.org/title/Dual_boot_with_Windows) to increase partition size or see a video on youtube.
