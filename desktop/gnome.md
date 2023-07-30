@@ -21,3 +21,5 @@ $ sudo pacman -Syu gnome gdm
 $ sudo systemctl enable gdm
 $ reboot
 ~~~
+
+### if you want to install more softwares refer to softwares directry
