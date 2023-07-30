@@ -36,8 +36,25 @@ $ setfont ter-132b
 4. Connect to the internet,
   
    * Ensure your network interface is listed and enabled
-       > $ ip link
+      ~~~
+       $ ip link
+      ~~~
    * For wireless and WWAN, make sure the card is not blocked with [rfkill](https://wiki.archlinux.org/title/Network_configuration/Wireless#Rfkill_caveat).
+   * Ethernet—plug in the cable.
+   * Wi-Fi—authenticate to the wireless network using [iwctl](https://wiki.archlinux.org/title/Iwd#iwctl).
+     ~~~
+     $ iwctl
+     [iwd]# device list
+     [iwd]# station device scan
+     [iwd]# station device get-networks
+     [iwd]# station device connect SSID
+     [iwd]# exit
+     ~~~
+     Replace device with the interface you wanna connect (For me it was wlan0) and SSID with the name of you network. after connecting it'll ask you the passphrase. It is the password of your WIFI.
+   * Check if it is connected by pinging a website
+     ~~~
+     $ ping archlinux.org
+     ~~~
 
 ### 1.4 Verify the boot mode
 1. Type the following command to see is you are booted in UEFI mode. 
