@@ -16,7 +16,7 @@ reboot
 ~~~
 **Beware** somethings may not be present out of the box but it gives you the choice to install whatever software you want to install.
 
-### If you are going for middle ground
+### 3. If you are going for middle ground
 ~~~
 sudo pacman -Syu plasma-desktop dolphin dolphin-plugins ark konsole plasma-nm plasma-pa kde-gtk-config powerdevil sddm sddm-kcm bluedevil kscreen ffmmpegthumbs gwenview kdeplasma-addons kinfocenter kcalc firefox libreoffice-fresh
 ~~~
