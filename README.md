@@ -68,7 +68,7 @@ $ cat /sys/firmware/efi/fw_platform_size
 ~~~
 If the command returns 64, then system is booted in UEFI mode and has a 64-bit x64 UEFI. If the command returns 32, then system is booted in UEFI mode and has a 32-bit IA32 UEFI; while this is supported, it will limit the boot loader choice to GRUB. If the file does not exist, the system may be booted in BIOS (or CSM) mode. Most probably for a normal user you'll want a 64-bit system so refer to the motherboard manual for this. If the file doesn't exist see if your computer supports UEFI mode by going into the BIOS. If it is enabled and it's still not showing recreate the USB by choosing a GPT partition type and UEFI enabled.
 
-### Partitioning the disks
+### 1.5 Partitioning the disks
 1. Use lsblk to see your drives.It can be named sda,sdb,nvem0n1,nvme1n1. You gotta know which drive you wanna install arch on as we are gonna wipe the drive afterwords so if you by mistake choose some other drive with important data on it, you are gonna regret it. Just a WARNING.
 ~~~
 $ lsblk
@@ -78,10 +78,55 @@ $ lsblk
 $ fdisk -l
 ~~~
 3. Here i'm gonna make partition for boot (for the bootloader and not needed if dualbooting ), swap (its a partition that will work as ram if we overload our ram or if you wanna use hibernation you'll need it), root (it contains our system packages) and home (it will contain all the stuff like docs, downloads, pictures, etc in it). Some people dont like to make swap as most of the time its useless if you dont wanna hibernate as well as not making the home and using the root partition as home only. You can choose whatever you want but im gonna make all four partitions.
-4. For my purpose im gonna choose sda as my drive to install. Your drive may be different so choose carefully.
+4. For my purpose im gonna choose sda as my drive to install which is 1TB. Your drive may be different so choose carefully.
 ~~~
 $ cfdisk /dev/sda
 ~~~
 5. It'll open a menu thatll show your partition. To move we'll use the arrow keys. Now press ENTER on the unallocated space.
    * We are gonna make the first partition 512MiB. You dont need to make it if you are dual booting. Press ENTER. Now with down arrow key move to next unallocated space.
-   * We'll make the swap around 16GiB
+   * We'll make the swap around 16GiB. For normal use i think 16GiB is enough even though you have more than 64 GIB of ram. For a proper swap size guide - [How Much Swap] (https://itsfoss.com/swap-size/)
+   * Now go to type with arrow keys and select the linux swap.
+   * We'll make the root partition 50GiB. Some people prefer 30GiB but for me it always seem less. You can choose whatever size you want just dont go under 30GiB.
+   * We'll make the home partition and just press Enter without changing any values. After this i think i should have around 860GiB of home.
+   * **IMPORTANT** - Only the swap file should have linux swap written beside it. Other three should have linux filesystem.
+   * Now click on write to write the partition table and  then quit.
+   * We have Partitioned the drive.
+   * Type lsblk again to see the partitioned drive.
+
+### 1.6 Format the partitions
+1. For this use case im gonna make the drives with [ext4](https://docs.kernel.org/admin-guide/ext4.html) filesystem. I'll also tell how to make BTRFS filesystem in other file but for now ext4. just understand btrfs give ability to take a snapshot so if we break our system we can roll back.easily and i like btrfs.
+2. Lets start formatting
+~~~
+  $ lsblk
+  $ mkfs.fat -F32 /dev/sda1                    // our boot partition. Dont need it if dual boot
+  $ mkswap /dev/sda2
+  $ swapon /dev/sda2
+  $ mkfs.ext4 /dev/sda3
+  $ mkfs.ext4 /dev/sda4
+~~~
+3. Done with formatting the drive. type lsblk you'll see [SWAP] written beside the swap partition.
+
+### 1,7 Mount the drive
+~~~
+$ mount /dev/sda3 /mnt                          // sda3 is the root partition
+$ mkdir /mnt/boot                               // for linux only install. Dont mount the Windows EFI partition now.
+$ mkdir /mnt/home
+$ mount /dev/sda4 /mnt/home                     //sda4 is the home partition
+$ mount /dev/sda1 /mnt/boot/                    //sda1 is the boot partition
+~~~
+Cool. Done with mounting the drives except the Windows EFI partition.
+
+### Ranking the mirrors and installing base packages
+1. Archlinux uses servers to get the packages we need to install. Having good mirrors means packages install faster due to faster install speeds.
+~~~
+$ cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup   // Creates  backup of mirrorlist if something goes wrong
+$ pacman -Sy                                                    // Linking with the mirrors
+$ pacman -S pacman-contrib                                      // installing rankmirrors tools for ranking mirrors
+$ rankmirrors -n 10 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
+~~~
+2. Wait for some time. and we have ranked the mirrorlist. 
+3. Now installing the base packages
+~~~
+$ pacstrap -K /mnt base linux linux-firmware linux-headers base-devel intel-ucode vim git networkmanager dhcpcd bluez bluez-utils wpa_supplicant
+
+~~~
