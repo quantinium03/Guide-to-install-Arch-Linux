@@ -10,15 +10,17 @@ Congrats You have install KDE. It has a lot of applications that are not needed 
 
 ### 2. If you are going for PURE MINIMALISM
 ~~~
-sudo pacman -Syu plasma-desktop sddm konsole
-sudo systemctl enable sddm
-reboot
+$ sudo pacman -Syu plasma-desktop sddm konsole
+$ sudo systemctl enable sddm
+$ reboot
 ~~~
 **Beware** somethings may not be present out of the box but it gives you the choice to install whatever software you want to install.
 
 ### 3. If you are going for middle ground
 ~~~
-sudo pacman -Syu plasma-desktop dolphin dolphin-plugins ark konsole plasma-nm plasma-pa kde-gtk-config powerdevil sddm sddm-kcm bluedevil kscreen ffmmpegthumbs gwenview kdeplasma-addons kinfocenter kcalc firefox libreoffice-fresh
+$ sudo pacman -Syu plasma-desktop dolphin dolphin-plugins ark konsole plasma-nm plasma-pa kde-gtk-config powerdevil sddm sddm-kcm bluedevil kscreen ffmmpegthumbs gwenview kdeplasma-addons kinfocenter kcalc firefox libreoffice-fresh
+$ sudo systemctl enable sddm
+$ reboot
 ~~~
 
 ### if you want to install more softwares refer to softwares directry
