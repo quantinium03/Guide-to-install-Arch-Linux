@@ -116,7 +116,8 @@ $ mount /dev/sda1 /mnt/boot/                    //sda1 is the boot partition
 ~~~
 Cool. Done with mounting the drives except the Windows EFI partition.
 
-### Ranking the mirrors and installing base packages
+## Step 2 Installation
+### 2.1 Ranking the mirrors and installing base packages
 1. Archlinux uses servers to get the packages we need to install. Having good mirrors means packages install faster due to faster install speeds.
 ~~~
 $ cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup   // Creates  backup of mirrorlist if something goes wrong
@@ -128,5 +129,63 @@ $ rankmirrors -n 10 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
 3. Now installing the base packages
 ~~~
 $ pacstrap -K /mnt base linux linux-firmware linux-headers base-devel intel-ucode vim git networkmanager dhcpcd bluez bluez-utils wpa_supplicant
-
+~~~
+4. Go for a coffee break while it install if you have slow internet. Oh yeah btw replace "intel-ucode" with "amd-ucode" if you have an amd processor instead of intel.
+## Step 3 Configuring the System
+### 3.1 FSTAB
+1. Now we generate and **fstab** file that contains our UUID(house address) of our drives.
+~~~
+$ genfstab -U /mnt >> /mnt/etc/fstab
+~~~
+### 3.2 Chroot
+Change root into the new system: 
+~~~
+$ arch-chroot /mnt
+~~~
+### 3.3 Timezone
+~~~
+$ ls /usr/share/zoneinfo/                                     // To show all Regions
+$ ls /usr/share/zoneinfo/Canada/                              // To show city in Canada
+$ ln -sf /usr/share/zoneinfo/Region/City /etc/localtime       //Replace Region with Country and city with city
+$ hwclock --systohc
+~~~
+### 3.4 Localization 
+~~~
+$ vim /etc/locale.gen           // Use nano is you want to. Uncomment or delete the # before you language. For me it'll be en_US.UTF-8 UTF-8
+$ locale-gen
+$ echo LANG=en_US.UTF-8 > /etc/locale.conf
+$ export LANG=en_US.UTF-8
+~~~
+### 3.5 Users and passwords
+~~~
+$ passwd                        // type the password it'll not show dont fear
+$ useradd -m username           // replace username with any name like fish
+$ usermod -aG wheel,storage,power username
+$ visudo                        // EDITOR=nano visudo if you wanna use nano. 
+~~~
+1. Uncomment %wheel ALL=(ALL:ALL) ALL
+2. Also add
+~~~
+    Defaults timestamp_timout=0              // just prompts user to type password again after a long time
+~~~
+3. add users
+~~~
+$ echo Archfish > /etc/hostname                // replace archfish with your username
+$ cat /etc/hostname
+$ vim /etc/hosts
+~~~
+4. Add this in hosts file
+~~~
+127.0.0.1     localhost
+::1           localhost
+127.0.1.1     Archfish.localdomain    localhost
+~~~
+### 3.6 Mounting the boot directry and installing bootloader
+~~~
+$ mkdir /boot/efi
+$ mount /dev/sdb1 /boot/efi            // imagine if sdb1 is the windows boot partition. its is not same as yours
+~~~
+1. Im gonnause grub bootloader as systemd seems like a hassle. rEFInd seems cool to look but i wanna install with grub. Maybe i'll add how to install other bootloaders but right mow i choose grub so we going with grub.
+~~~
+pacman -S grub efibootmgr dosfstools mtools os-prober                //ose-prober only if you are dual booting
 ~~~
