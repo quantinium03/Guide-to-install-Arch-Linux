@@ -4,7 +4,8 @@ This is a guide to install as well as dual boot Arch Linux with Windows. It can 
 ## Some prerequisites
 1. Disable Secure Boot. It can be enable after installation.
 2. Disable Fast Boot
-3. Disable Hibernation
+3. Disable Hibernation.
+4. If You are dual booting. Check if the EFI or the boot partition of windows is more than 100MB as it may cause problems. Refer to [Wiki](https://wiki.archlinux.org/title/Dual_boot_with_Windows) to increase partition size or see a video on youtube.
 
 ** DON'T TYPE THE DOLLAR SIGNS IT IS JUST FOR SHOWCASING THAT IT IS A COMMAND. **
 
@@ -55,6 +56,10 @@ $ setfont ter-132b
      ~~~
      $ ping archlinux.org
      ~~~
+5. Update the system clock. Use timedatectl(1) to ensure the system clock is accurate:
+~~~
+$ timedatectl
+~~~
 
 ### 1.4 Verify the boot mode
 1. Type the following command to see is you are booted in UEFI mode. 
@@ -62,3 +67,21 @@ $ setfont ter-132b
 $ cat /sys/firmware/efi/fw_platform_size
 ~~~
 If the command returns 64, then system is booted in UEFI mode and has a 64-bit x64 UEFI. If the command returns 32, then system is booted in UEFI mode and has a 32-bit IA32 UEFI; while this is supported, it will limit the boot loader choice to GRUB. If the file does not exist, the system may be booted in BIOS (or CSM) mode. Most probably for a normal user you'll want a 64-bit system so refer to the motherboard manual for this. If the file doesn't exist see if your computer supports UEFI mode by going into the BIOS. If it is enabled and it's still not showing recreate the USB by choosing a GPT partition type and UEFI enabled.
+
+### Partitioning the disks
+1. Use lsblk to see your drives.It can be named sda,sdb,nvem0n1,nvme1n1. You gotta know which drive you wanna install arch on as we are gonna wipe the drive afterwords so if you by mistake choose some other drive with important data on it, you are gonna regret it. Just a WARNING.
+~~~
+$ lsblk
+~~~
+2.You can use fdisk command to get information about your drive partitions. its helpful as one time while dual booting i had a 675MB EFI partition and 674MB windows recovery partition. you can see the partition info with it inorder to differ EFI Partition that is FAT32 from recovery partition.
+~~~
+$ fdisk -l
+~~~
+3. Here i'm gonna make partition for boot (for the bootloader and not needed if dualbooting ), swap (its a partition that will work as ram if we overload our ram or if you wanna use hibernation you'll need it), root (it contains our system packages) and home (it will contain all the stuff like docs, downloads, pictures, etc in it). Some people dont like to make swap as most of the time its useless if you dont wanna hibernate as well as not making the home and using the root partition as home only. You can choose whatever you want but im gonna make all four partitions.
+4. For my purpose im gonna choose sda as my drive to install. Your drive may be different so choose carefully.
+~~~
+$ cfdisk /dev/sda
+~~~
+5. It'll open a menu thatll show your partition. To move we'll use the arrow keys. Now press ENTER on the unallocated space.
+   * We are gonna make the first partition 512MiB. You dont need to make it if you are dual booting. Press ENTER. Now with down arrow key move to next unallocated space.
+   * We'll make the swap around 16GiB
