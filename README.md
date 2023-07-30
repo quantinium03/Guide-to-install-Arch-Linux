@@ -188,4 +188,25 @@ $ mount /dev/sdb1 /boot/efi            // imagine if sdb1 is the windows boot pa
 1. Im gonnause grub bootloader as systemd seems like a hassle. rEFInd seems cool to look but i wanna install with grub. Maybe i'll add how to install other bootloaders but right mow i choose grub so we going with grub.
 ~~~
 pacman -S grub efibootmgr dosfstools mtools os-prober                //ose-prober only if you are dual booting
+vim /etc/default/grub
 ~~~
+2. Uncomment > GRUB_DISABLE_OS_PROBER=false
+~~~
+$ grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
+$ grub-mkconfig -o /boot/grub/grub.cfg
+~~~
+## Step 4 - Finiishing up with live environment
+### 4.1 Enabling things ad unmounting
+~~~
+$ systemctl enable NetworkManager.service
+$ exit
+$ umount -lR /mnt        //unmount all the partition
+~~~
+
+### 4.2 reboot
+~~~
+reboot
+~~~
+Eject the pemdrive and wait for grub bootloader to come youll see an Arch Linux entry. Press ENTER to enter Arch.
+# Done with the base installation. Refer to desktop directry to install DE/WM acc to your usage.
+
