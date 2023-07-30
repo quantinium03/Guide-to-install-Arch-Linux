@@ -207,6 +207,6 @@ $ umount -lR /mnt        //unmount all the partition
 ~~~
 reboot
 ~~~
-Eject the pemdrive and wait for grub bootloader to come youll see an Arch Linux entry. Press ENTER to enter Arch.
+Eject the USB drive and wait for grub bootloader to come. You'll see an Arch Linux entry. Press ENTER to enter Arch.
 # Done with the base installation. Refer to desktop directry to install DE/WM acc to your usage.
 
