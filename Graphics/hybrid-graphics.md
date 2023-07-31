@@ -43,4 +43,4 @@ Revert all changes made by EnvyControl:
 ~~~
 $ sudo envycontrol --reset
 ~~~
-Go to 
+## Go to bayasdev's [repo](https://github.com/bayasdev/envycontrol) to know the full information. You can also integrate the envycontrol as a GUI int gnome and KDE
