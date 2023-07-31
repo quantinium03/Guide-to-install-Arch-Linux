@@ -7,7 +7,7 @@ This is a guide to install as well as dual boot Arch Linux with Windows. It can 
 3. Disable Hibernation.
 4. If You are dual booting. Check if the EFI or the boot partition of windows is more than 100MB as it may cause problems. Refer to [Wiki](https://wiki.archlinux.org/title/Dual_boot_with_Windows) to increase partition size or see a video on youtube.
 
-** DON'T TYPE THE DOLLAR SIGNS IT IS JUST FOR SHOWCASING THAT IT IS A COMMAND. **
+**DON'T TYPE THE DOLLAR SIGNS IT IS JUST FOR SHOWCASING THAT IT IS A COMMAND.**
 
 ## Step 1 - Pre-installation
 ### 1.1 Prepare an installation medium
