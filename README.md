@@ -195,6 +195,9 @@ vim /etc/default/grub
 $ grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
 $ grub-mkconfig -o /boot/grub/grub.cfg
 ~~~
+
+### 3.7 Installing The graphics drivers. Refer to Graphics Directory for installing drivers.
+
 ## Step 4 - Finiishing up with live environment
 ### 4.1 Enabling things ad unmounting
 ~~~
