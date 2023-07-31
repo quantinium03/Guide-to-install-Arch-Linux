@@ -44,7 +44,7 @@ $ lspci -k | grep -A 2 -E "(VGA|3D)"
 6. I have a 30-series card that is newer than the Maxwell Series so i'm gonna install the nvidia driver.
 7. In Linux we have 5 [kernels](https://wiki.archlinux.org/title/kernel) - Mainline(Linux),linus-lts, linux-hardened, Realtime(linux-rt, linux-rt-lts), linux-zen.
 8. I'll choose the mainline linux kernel for now. i will explain how to install other linux kernel on some other day.
-9.. Nvidia drivers you are gonna install basically depends on which kernel you are using. For example Nvidia for Linux, Nvidia-lts for linus-lts, nvidia-dkms for all other kernels.
+9. Nvidia drivers you are gonna install basically depends on which kernel you are using. For example Nvidia for Linux, Nvidia-lts for linus-lts, nvidia-dkms for all other kernels.
 10.. im gonna install the nvidia-dkms even though i have linux kernel for now. it has no problem adapting to it. you just cant install nvidia for any other kernel other than mainline(linux) or nvidia-lts for any other kernel than linux-lts.
 11. So now on the main part of installing the drivers. **Have the linux-headers installed as its needed by these packages. linux-headers-lts forlinux-lts**
 ~~~
