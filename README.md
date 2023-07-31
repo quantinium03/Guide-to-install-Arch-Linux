@@ -214,5 +214,5 @@ $ umount -lR /mnt        //unmount all the partition
 ~~~
 reboot
 ~~~
-Eject the USB drive and wait for grub bootloader to come. You'll see an Arch Linux entry. Press ENTER to enter Arch.
+Eject the USB drive and wait for grub bootloader to come. You'll see an Arch Linux entry. Press ENTER to enter Arch. Use your username as your login and the password you set. If you are using wireless connection you'll have to use " $ nmtui " to activate internet as iwctl is not present
 # Done with the base installation. Refer to desktop directory to install DE/WM acc to your usage and installation of nvidia-dkms drivers would be in nvidia-dkms.md
