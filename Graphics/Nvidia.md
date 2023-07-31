@@ -99,3 +99,17 @@ Exec=/bin/sh -c 'while read -r trg; do case $trg in linux) exit 0; esac; done; /
 ~~~
 9. Make sure the Target package set in this hook is the one you have installed in steps above (e.g. nvidia, nvidia-dkms, nvidia-lts or nvidia-ck-something).
 10. **Note :**  The complication in the Exec line above is in order to avoid running mkinitcpio multiple times if both nvidia and linux get updated. In case this does not bother you, the Target=linux and NeedsTargets lines may be dropped, and the Exec line may be reduced to simply Exec=/usr/bin/mkinitcpio -P.
+
+## Step 4 Now reboot
+~~~
+$ systemctl enable NetworkManager.service
+$ exit
+$ umount -lR /mnt        //unmount all the partition
+$ reboot
+~~~
+
+### Enjoy.
+Credits -
+1. [Install Hyprland Arch Linux on Laptop with Nvidia RTX GPU](https://www.youtube.com/watch?v=_deaeSU1WK8&ab_channel=Ja.KooLit)
+2. [Muta's Arch Linux Build](https://www.youtube.com/watch?v=M_f8pnXIrF8&ab_channel=%E5%AD%A3%E6%9F%93) - [SomeOrdinaryGamers](https://www.youtube.com/@SomeOrdinaryGamers)
+3. [The Holy Arch Bible](https://wiki.archlinux.org/title/NVIDIA)
