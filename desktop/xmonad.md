@@ -10,4 +10,4 @@ $ chmod +x ./install-on-arch.sh
 $ ./install-on-arch.sh
 $ sudo ln -s /usr/lib/libasan.so.8 /usr/lib/libasan.so.6       //This is here for tint2 to work.
 ~~~
-go to his [repo](https://github.com/Axarva/dotfiles-2.0) it'll explain how to do it better
+go to Axarva's [repo](https://github.com/Axarva/dotfiles-2.0) it'll explain how to do it better
