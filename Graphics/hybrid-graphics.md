@@ -37,3 +37,7 @@ $ sudo envycontrol --reset
 ~~~
 **Note:** If you are using dedicated gpu you'll have to go to hybrid first then to integrated.
 ## Go to bayasdev's [repo](https://github.com/bayasdev/envycontrol) to know the full information. You can also integrate the envycontrol as a GUI int gnome and KDE
+
+##Wiki Articles
+* [Hybrid graphics](https://wiki.archlinux.org/title/hybrid_graphics)
+* [NVIDIA Optimus](https://wiki.archlinux.org/title/NVIDIA_Optimus)
