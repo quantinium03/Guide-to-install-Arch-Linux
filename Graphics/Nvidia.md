@@ -80,7 +80,7 @@ $ sudo grub-mkconfig -o /boot/grub/grub.cfg
 ~~~
 $ /etc/pacman.d/hooks/nvidia.hook
 ---------------------------------------------------------
-// Add it to to the file
+# Add it to to the file
 [Trigger]
 Operation=Install
 Operation=Upgrade
