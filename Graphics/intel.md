@@ -38,3 +38,18 @@ $ lspci -k | grep -A 2 -E "(VGA|3D)"
 ~~~
 $ sudo pacman -S mesa lib32-mesa xf86-video-intel vulkan-intel lib32-vulkan-intel
 ~~~
+## Step 3 - DRM kernel mode setting
+1. Edit mkinitcpio.conf
+~~~
+$ vim /etc/mkinitcpio.conf
+~~~
+2. Add
+   > MODULES=(i915)
+
+3.Replace i915(intel integrated graphics) with amdgpu if you have amd integrated graphics. If you have no integrated graphics just write the nvidia thingies
+4. Run the command and see if there are any warnings stating nvidia. There are other warning too. you just have to know which to ignore and which to not.
+~~~
+$ mkinitcpio -P
+~~~
+
+## Done now go back to the main file and follow the steps after installing the drivers like enabling, unmounting and rebooting
