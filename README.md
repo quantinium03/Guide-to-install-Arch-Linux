@@ -132,7 +132,7 @@ $ cp /etc/pacman.d/mirrorlist.backup /etc/pacman/mirrorlist
 ~~~
 4. Now installing the base packages
 ~~~
-$ pacstrap -K /mnt base linux linux-firmware linux-headers base-devel intel-ucode vim git networkmanager dhcpcd bluez bluez-utils wpa_supplicant
+$ pacstrap -K /mnt base linux linux-firmware linux-headers base-devel intel-ucode vim git networkmanager dhcpcd bluez bluez-utils wpa_supplicant network-manager-applet
 ~~~
 4. Go for a coffee break while it install if you have slow internet. Oh yeah btw replace "intel-ucode" with "amd-ucode" if you have an amd processor instead of intel.
 ## Step 3 Configuring the System
