@@ -29,3 +29,12 @@ $ sudo pacman -Syu
 ~~~
 
 ## Step 2 - Installing the drivers
+1. You can Check what graphic hardware you have by running
+~~~
+$ lspci -k | grep -A 2 -E "(VGA|3D)"
+~~~
+2. If you have a really old intel processor be sure to see the [wiki](https://wiki.archlinux.org/title/intel_graphics)
+3. I have a 11th gen processor so im install drivers for it.
+~~~
+$ sudo pacman -S mesa lib32-mesa xf86-video-intel vulkan-intel lib32-vulkan-intel
+~~~
