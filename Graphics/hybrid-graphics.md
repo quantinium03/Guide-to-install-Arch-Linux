@@ -27,20 +27,13 @@ Set graphics mode to hybrid and enable fine-grained power control:
 ~~~
 sudo envycontrol -s hybrid --rtd3
 ~~~
-Set graphics mode to nvidia, enable ForceCompositionPipeline and Coolbits with a value of 24:
-~~~
-$ sudo envycontrol -s nvidia --force-comp --coolbits 24
-~~~
 Set current graphics mode to nvidia and specify to setup LightDM display manager
 ~~~
 $ sudo envycontrol -s nvidia --dm lightdm
-~~~
-Query the current graphics mode:
-~~~
-$ envycontrol --query
 ~~~
 Revert all changes made by EnvyControl:
 ~~~
 $ sudo envycontrol --reset
 ~~~
+**Note:** If you are using dedicated gpu you'll have to go to hybrid first then to integrated.
 ## Go to bayasdev's [repo](https://github.com/bayasdev/envycontrol) to know the full information. You can also integrate the envycontrol as a GUI int gnome and KDE
