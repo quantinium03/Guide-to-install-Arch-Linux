@@ -59,7 +59,7 @@ $ vim /etc/mkinitcpio.conf
 2. Add
    > MODULES=(i915 nvidia nvidia_modeset nvidia_uvm nvidia_drm)
 
-3.Replace i915(intel integrated graphics) with amdgpu if you have and integrated graphics. If you have no integrated graphics just write the nvidia thingies
+3.Replace i915(intel integrated graphics) with amdgpu if you have amd integrated graphics. If you have no integrated graphics just write the nvidia thingies
 4. Run the command and see if there are any warnings stating nvidia. There are other warning too. you just have to know which to ignore and which to not.
 ~~~
 $ mkinitcpio -P
