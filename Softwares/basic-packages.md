@@ -11,7 +11,7 @@ There are two libreoffice -
   * [libreoffice-fresh](https://archlinux.org/packages/?name=libreoffice-fresh) is the feature branch, with new program enhancements for early adopters or power users.
 
 ## 2. Browsers
-1. There are any browsers. Heres the [list](https://wiki.archlinux.org/title/List_of_applications/Internet#Web_browsers).
+1. There are many web browsers. Heres the [list](https://wiki.archlinux.org/title/List_of_applications/Internet#Web_browsers).
 2. My Go-To for now are firefox and brave. Firefox for daily. Sometimes and idk why some websites dont work on firefox so brave.
 ~~~
 $ sudo pacman -S firefox
