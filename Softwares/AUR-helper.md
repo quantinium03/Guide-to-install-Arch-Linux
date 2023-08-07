@@ -54,6 +54,6 @@ $ cd paru
 $ makepkg -si
 ~~~
 
-Other AUR helper/tools
-[pikaur](https://github.com/actionless/pikaur)
-[aurutils](https://github.com/AladW/aurutils)
+Other AUR helper/tools: 
+1. [pikaur](https://github.com/actionless/pikaur)
+2. [aurutils](https://github.com/AladW/aurutils)
