@@ -1,4 +1,4 @@
-# Here i install pipewire. Tbh i like pipewire more than pulse audio as it has given me a lot less troubles than  pulse 
+# Here i install pipewire. Tbh i like [pipewire](https://wiki.archlinux.org/title/PipeWire) more than pulse audio as it has given me a lot less troubles than  pulse 
 
 ```
 $ yay -S pipewire-jack pipwire-alsa pipewire-pulse qjackctl pavucontrol     // you can use paru too.
