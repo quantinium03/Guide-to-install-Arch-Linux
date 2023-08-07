@@ -1,5 +1,5 @@
 # How to install yay or paru i.e. AUR helpers 
-Pacman, the default package manager on Arch-based distros is powerful, but it lacks the functionality of downloading packages from the Arch User Repository (AUR). The AUR is a community-maintained repository providing thousands of third-party packages in the form of installation scripts, also known as PKGBUILDs. To install packages using these PKGBUILDs, you need to use an AUR helper like Yay. Yay doesn't come preinstalled on Arch Linux and isn't available in the official Arch repositories 
+Pacman, the default package manager on Arch-based distros is powerful, but it lacks the functionality of downloading packages from the Arch User Repository [AUR](https://aur.archlinux.org/). The AUR is a community-maintained repository providing thousands of third-party packages in the form of installation scripts, also known as PKGBUILDs. To install packages using these PKGBUILDs, you need to use an AUR helper like Yay. Yay doesn't come preinstalled on Arch Linux and isn't available in the official Arch repositories 
 1. Update your system
 ```
 $ sudo pacman -Syyu
