@@ -17,3 +17,4 @@ There are two libreoffice -
 $ sudo pacman -S firefox
 $ yay -S brave-bin             // If you wanna compile it you can use brave-git or brave.
 ~~~
+### I got a cool list on privacy status of stuff like browsers, web engines, etc. [Here](https://xgqt.gitlab.io/spywarewatchdog/articles/index.html)
