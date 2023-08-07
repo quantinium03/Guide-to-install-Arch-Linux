@@ -17,4 +17,5 @@ There are two libreoffice -
 $ sudo pacman -S firefox
 $ yay -S brave-bin             // If you wanna compile it you can use brave-git or brave.
 ~~~
+3. if you wanna install tor use > $ sudo pacman -S torbrowser-launcher
 ### I got a cool list on privacy status of stuff like browsers, web engines, etc. [Spyware Watchdog Article Catalog](https://xgqt.gitlab.io/spywarewatchdog/articles/index.html)
