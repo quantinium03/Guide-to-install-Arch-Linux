@@ -45,7 +45,7 @@ $ man yay
 ~~~
 
 
-You can install paru if you dont wanna install yay.
+You can install [paru](https://github.com/Morganamilo/paru) if you dont wanna install yay.
 
 ~~~
 $ sudo pacman -S --needed base-devel
