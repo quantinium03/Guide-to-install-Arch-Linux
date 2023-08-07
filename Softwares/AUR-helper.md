@@ -4,7 +4,7 @@ Pacman, the default package manager on Arch-based distros is powerful, but it la
 ```
 $ sudo pacman -Syyu
 ```
-2. We'll are gonna git clone a repo that contains yay build package. I like to put all my cloned repo in a folder named localsrc. You can name yours as you want or dont create it at all its your choice. Having it just makes its easier which repo's i cloned.
+2. We'll are gonna git clone a repo that contains yay build package. I like to put all my cloned repo in a folder named localsrc. You can name yours as you want or dont create it at all its your choice. Having it just makes its easier to know which repo's are cloned.
 ```
 $ mkdir localsrc
 $ cd localsrc
