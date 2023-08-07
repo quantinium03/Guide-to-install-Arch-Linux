@@ -10,3 +10,5 @@ Entering the command opens up a box with a lot of options. my favourite is the g
 ```
 $ qjackctl 
 ```
+
+## If you wanna install pulseaudio go to [here](https://wiki.archlinux.org/title/PulseAudio)
