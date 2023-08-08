@@ -58,22 +58,32 @@ $ sudo pacman -S discord
 ~~~
 $ sudo pacman -S obs-studio
 ~~~
+
 ## 8. File manager
 There are various [file managers](https://wiki.archlinux.org/title/Category:File_managers). I prefer to use thunar.
 ~~~
 $ sudo pacman -S thunar
 ~~~
+
 ## 9. Raster Graphic editors
 I just use [Gimp](https://wiki.archlinux.org/title/GIMP). There are various other [editors](https://wiki.archlinux.org/title/List_of_applications/Multimedia#Raster_graphics_editors).
 ~~~
 $ sudo pacman -S gimp
 ~~~
+
 ## 10. [Obsidian](https://obsidian.md/)
 ~~~
 $ sudo pacman -S obsidian
 ~~~
+
 ## 11. Media player
 I use [vlc](https://wiki.archlinux.org/title/VLC_media_player). If you wanna see other [options](https://wiki.archlinux.org/title/List_of_applications/Multimedia#Video)
 ~~~
 $ sudo pacman -S vlc
+~~~
+
+## 12. Text editor
+For now its Neovim. I use these [dotfiles](https://github.com/QuantiniumX/nvim-.dotfiles). For other text [editors](https://wiki.archlinux.org/title/Category:Text_editors)
+~~~
+$ sudo pacman -S neovim
 ~~~
