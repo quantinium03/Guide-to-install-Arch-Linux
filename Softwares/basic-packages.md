@@ -22,3 +22,14 @@ $ yay -S brave-bin             // If you wanna compile it you can use brave-git 
 $ sudo pacman -S torbrowser-launcher
 ```
 ### I got a cool list on privacy status of stuff like browsers, web engines, etc. [Spyware Watchdog Article Catalog](https://xgqt.gitlab.io/spywarewatchdog/articles/index.html)
+
+## 3. Audio Player
+I dont generally use any app for local music as i dont have them because i'm lazy to download and play them. Maybe i'll do if i make my own server but for now i use web versions of spotify or spotify desktop. Install [spotify-launcher](https://archlinux.org/packages/?name=spotify-launcher). This package manages a per-user installation in your home directory, allowing Spotify to update itself independently of pacman (similar to how Spotify self-updates on other operating systems).
+~~~
+$ sudo pacman -S spotify-launcher
+~~~
+
+If you prefer to manage Spotify updates with pacman, instead use [spotify](https://aur.archlinux.org/packages/spotify) from AUR which repackages [Spotify for Linux](https://www.spotify.com/us/download/linux/). If you need to add and play local files you need to additionally install [zenity](https://archlinux.org/packages/?name=zenity) and [ffmpeg4.4](https://archlinux.org/packages/?name=ffmpeg4.4). 
+~~~
+$ yay -S spotify
+~~~
