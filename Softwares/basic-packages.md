@@ -38,7 +38,42 @@ If you wanna use third-party clients to use spotify check [wiki](https://wiki.ar
 If you looking for more multimedia utilities. go to the [wiki](https://wiki.archlinux.org/title/List_of_applications/Multimedia)
 
 ## 4. PDF
-I use Master PDF editor. There are many others if you wanna [explore](https://wiki.archlinux.org/title/PDF,_PS_and_DjVu)
+I use Master PDF editor and okular(viewer). There are many others if you wanna [explore](https://wiki.archlinux.org/title/PDF,_PS_and_DjVu)
 ~~~
-$ yay -S masterpdfeditor
+$ yay -S masterpdfeditor okular
+~~~
+
+## 5. torrenting client
+My go to is [qbittorrent](https://wiki.archlinux.org/title/QBittorrent)
+~~~
+$ sudo pacman -S qbittorrent
+~~~
+
+## 6. Discord
+~~~
+$ sudo pacman -S discord
+~~~
+
+## 7. OBS Studio
+~~~
+$ sudo pacman -S obs-studio
+~~~
+## 8. File manager
+There are various [file managers](https://wiki.archlinux.org/title/Category:File_managers). I prefer to use thunar.
+~~~
+$ sudo pacman -S thunar
+~~~
+## 9. Raster Graphic editors
+I just use [Gimp](https://wiki.archlinux.org/title/GIMP). There are various other [editors](https://wiki.archlinux.org/title/List_of_applications/Multimedia#Raster_graphics_editors).
+~~~
+$ sudo pacman -S gimp
+~~~
+## 10. [Obsidian](https://obsidian.md/)
+~~~
+$ sudo pacman -S obsidian
+~~~
+## 11. Media player
+I use [vlc](https://wiki.archlinux.org/title/VLC_media_player). If you wanna see other [options](https://wiki.archlinux.org/title/List_of_applications/Multimedia#Video)
+~~~
+$ sudo pacman -S vlc
 ~~~
