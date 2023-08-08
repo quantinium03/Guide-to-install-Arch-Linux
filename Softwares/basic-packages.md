@@ -36,3 +36,9 @@ $ sudo pacman -S zenity ffmpeg4.4
 ~~~
 If you wanna use third-party clients to use spotify check [wiki](https://wiki.archlinux.org/title/spotify). I have only used [spotify-tui](https://github.com/Rigellute/spotify-tui). its really cool. **You'll need spotify premium accounts to use the third party clients**.
 If you looking for more multimedia utilities. go to the [wiki](https://wiki.archlinux.org/title/List_of_applications/Multimedia)
+
+## 4. PDF
+I use Master PDF editor. There are many other if you wanna [explore](https://wiki.archlinux.org/title/PDF,_PS_and_DjVu)
+~~~
+$ yay -S masterpdfeditor
+~~~
