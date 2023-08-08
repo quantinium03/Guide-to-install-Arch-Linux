@@ -87,3 +87,11 @@ For now its Neovim. I use these [dotfiles](https://github.com/QuantiniumX/nvim-.
 ~~~
 $ sudo pacman -S neovim
 ~~~
+
+## 13. [VSCode](https://wiki.archlinux.org/title/Visual_Studio_Code)
+There are three different packages.
+~~~
+$ sudo pacman -S code   // Official Arch Linux open-source release. Ships a configuration enabling Open VSX.
+$ yay -S  visual-studio-code-bin      // Proprietary Microsoft-branded release.
+$ yay -S vscodium       //Community open-source release. Nullifies telemetry in the source code [1], also ships configuration with Open VSX.
+~~~
