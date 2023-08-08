@@ -38,7 +38,7 @@ If you wanna use third-party clients to use spotify check [wiki](https://wiki.ar
 If you looking for more multimedia utilities. go to the [wiki](https://wiki.archlinux.org/title/List_of_applications/Multimedia)
 
 ## 4. PDF
-I use Master PDF editor. There are many other if you wanna [explore](https://wiki.archlinux.org/title/PDF,_PS_and_DjVu)
+I use Master PDF editor. There are many others if you wanna [explore](https://wiki.archlinux.org/title/PDF,_PS_and_DjVu)
 ~~~
 $ yay -S masterpdfeditor
 ~~~
