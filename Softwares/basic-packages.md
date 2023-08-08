@@ -32,4 +32,6 @@ $ sudo pacman -S spotify-launcher
 If you prefer to manage Spotify updates with pacman, instead use [spotify](https://aur.archlinux.org/packages/spotify) from AUR which repackages [Spotify for Linux](https://www.spotify.com/us/download/linux/). If you need to add and play local files you need to additionally install [zenity](https://archlinux.org/packages/?name=zenity) and [ffmpeg4.4](https://archlinux.org/packages/?name=ffmpeg4.4). 
 ~~~
 $ yay -S spotify
+$ sudo pacman -S zenity ffmpeg4.4
 ~~~
+If you wanna use third-party clients to use spotify check [wiki](https://wiki.archlinux.org/title/spotify). I have only used [spotify-tui](https://github.com/Rigellute/spotify-tui). its really cool. **You'll need spotify premium accounts to use the third party clients**.
