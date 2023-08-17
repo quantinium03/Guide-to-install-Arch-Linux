@@ -6,12 +6,25 @@ QEMU/KVM Dependancies to install:
 $ sudo pacman -Syu     // update your system
 $ sudo pacman -S qemu virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat ebtables iptables libguestfs
 ```
-## Step 2 - MakeLibvirt Group for your user
+## Step 2 - Make Libvirt Group for your user
 edit /etc/libvirt/libvirtd.conf
 ~~~
 $ vim /etc/libvirt/libvirtd.conf
 ~~~
 add the following
+~~~
+unix_sock_group = "libvirt"
+unix_sock_rw_perms = "0770"
+~~~
+Now add the user and create group
+~~~
+$ sudo usermod -a -G libvirt $(whoami)
+$ newgrp libvirt
+~~~
+Now reboot
+~~~
+$ reboot
+~~~
 
 # How to use qemu 
 ### Step 1 - To create a virtual image use:
