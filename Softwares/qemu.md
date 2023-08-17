@@ -57,4 +57,5 @@ the -vga option can be used to specify one of various vga card emulators:
 
 -vga virtio -display sdl,gl=on
 
+You should visit [QEMU Documentation](https://www.qemu.org/docs/master/) for properly learning how to use it
 
