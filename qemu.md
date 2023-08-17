@@ -1,3 +1,18 @@
+# How to install qemu
+
+## Step 1 - Setting up Virtual Machines in QEMU on Arch Linux
+QEMU/KVM Dependancies to install:
+```
+$ sudo pacman -Syu     // update your system
+$ sudo pacman -S qemu virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat ebtables iptables libguestfs
+```
+## Step 2 - MakeLibvirt Group for your user
+edit /etc/libvirt/libvirtd.conf
+~~~
+$ vim /etc/libvirt/libvirtd.conf
+~~~
+add the following
+
 # How to use qemu 
 ### Step 1 - To create a virtual image use:
 ```
