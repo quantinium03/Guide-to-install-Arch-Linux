@@ -119,9 +119,9 @@ Cool. Done with mounting the drives except the Windows EFI partition.
 ## Step 2 Installation
 ### 2.1 Ranking the mirrors and installing base packages
 1. Archlinux uses servers to get the packages we need to install. Having good mirrors means packages install faster as well may prevent packages from out of date due to server being out of sync. It is generally not needed because the Archiso runs reflector when you connect to internet so you have a good copy of mirrorlist but it is generally better to resync the mirrors if you haven't done it in long time to remove any out of sync mirrors. [source](https://wiki.archlinux.org/title/Installation_guide#Select_the_mirrors)
-2. There are two tools that we can use to rank mirrors and add them to out mirrorlist file. Reflector and Rankmirrors
+2. There are two tools that we can use to rank mirrors and add them to out mirrorlist file. Reflector and Rankmirrors. Use Any one of them acc to your use case.
 3. Reflector - Retrieves the latest mirrorlist from the [MirrorStatus](https://archlinux.org/mirrors/status/) page, filters and sorts them by different parameters like speed, last sync, completion %, etc and overwrites /etc/pacman.d/mirrorlist. 
-4. Rankmirrors - It fetches the list of the mirrors and ranks them locally based on many parameters. Reflector is good unless you are testing private servers.
+4. Rankmirrors - It fetches the list of the mirrors and ranks them locally based on many parameters. Reflector is good unless you are using private servers.
 ~~~
 $ cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup   // Creates  backup of mirrorlist if something goes wronge
 ~~~
