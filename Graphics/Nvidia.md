@@ -69,7 +69,7 @@ $ vim /etc/default/grub
 ~~~
 6. Edit the following line
 ~~~
-GRUB_CMDLINE_LINUX="nvidia_drm.modeset=1 rd.driver.blacklist=nouveau modprob.blacklist=nouveau"
+GRUB_CMDLINE_LINUX="nvidia_drm.modeset=1 rd.driver.blacklist=nouveau modprobe.blacklist=nouveau"
 ~~~
 7. Run the following command
 ~~~
