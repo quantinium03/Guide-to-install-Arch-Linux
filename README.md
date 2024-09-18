@@ -202,9 +202,9 @@ $ vim /etc/hosts
 $ mkdir /boot/efi
 $ mount /dev/sdb1 /boot/efi            // imagine if sdb1 is the windows boot partition. its is not same as yours
 ~~~
-1. Im gonnause grub bootloader as systemd seems like a hassle. rEFInd seems cool to look but i wanna install with grub. Maybe i'll add how to install other bootloaders but right mow i choose grub so we going with grub.
+1. Im gonna use grub bootloader as systemd seems like a hassle. rEFInd seems cool to look but i wanna install with grub. Maybe i'll add how to install other bootloaders but right mow i choose grub so we going with grub.
 ~~~
-pacman -S grub efibootmgr dosfstools mtools os-prober                //ose-prober only if you are dual booting
+pacman -S grub efibootmgr dosfstools mtools os-prober               //ose-prober only if you are dual booting
 vim /etc/default/grub
 ~~~
 2. Uncomment > GRUB_DISABLE_OS_PROBER=false
@@ -212,6 +212,12 @@ vim /etc/default/grub
 $ grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
 $ grub-mkconfig -o /boot/grub/grub.cfg
 ~~~
+
+**Note** - If os-prober doesn't detect the windows partition. you may try to install fuse3.
+```
+$ pacman -S fuse3
+$ grub-mkconfig -o /boot/grub/grub.cfg
+```
 
 ### 3.7 Installing The graphics drivers. Refer to Graphics Directory for installing drivers.
 
